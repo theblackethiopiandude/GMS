@@ -20,7 +20,6 @@ public class GButton extends JButton {
         this.imageStartLocation = imageStartLocation;
         this.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 
-//        this.setForeground(Color.WHITE);
     }
     public GButton(String buttonText, Point textStartLocation, int arc, Color backgroudColor, ImageIcon icon, Point imageStartLocation){
         this(arc, backgroudColor, icon, imageStartLocation);
@@ -38,6 +37,8 @@ public class GButton extends JButton {
         graphics2D.setPaint(backgroudColor);
         graphics2D.fillRoundRect(0,0, this.getWidth(), this.getHeight(), cornerRadius, cornerRadius);
 
+        graphics2D.drawImage(((ImageIcon) icon).getImage(), imageStartLocation.x, imageStartLocation.y, null);
+
         if (hasText){
             graphics2D.setColor(Color.WHITE);
             String[] word = buttonText.split("\n");
@@ -50,7 +51,6 @@ public class GButton extends JButton {
             }
         }
 
-        graphics2D.drawImage(((ImageIcon) icon).getImage(), imageStartLocation.x,imageStartLocation.y, null);
 //        super.paintComponent(graphics);
 
     }

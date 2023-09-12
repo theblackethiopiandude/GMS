@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6320f3e7-10da-4e96-9725-c85e78c01797" name="Changes" comment="Homepage Done with null Layout">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ServicePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ServicesFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CarPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +42,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
@@ -60,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694511443178</updated>
-      <workItem from="1694511445807" duration="10104000" />
+      <workItem from="1694511445807" duration="20850000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage Done with null Layout">
       <created>1694520664056</created>
@@ -76,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694520792004</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Homepage Done with null Layout">
+      <created>1694521962414</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694521962414</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +104,21 @@
         <entry key="MAIN">
           <value>
             <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
