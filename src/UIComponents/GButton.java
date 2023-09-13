@@ -1,24 +1,28 @@
-package Components;
+package UIComponents;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class GButton extends JButton {
+public class GButton extends JButton implements MouseListener{
     private final int cornerRadius;
-    private final Color backgroudColor;
+    private  Color backgroudColor;
     final private Icon icon;
     final private Point imageStartLocation;
     private boolean hasText = false;
     private  String buttonText;
     public GButton(int arc, Color backgroudColor, ImageIcon icon, Point imageStartLocation){
         this.setOpaque(false);
-        this.setFocusable(false);
+        this.setFocusable(true);
         this.cornerRadius = arc;
         this.backgroudColor = backgroudColor;
         this.icon = icon;
         this.imageStartLocation = imageStartLocation;
         this.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+
+        this.addMouseListener(this);
 
     }
     public GButton(String buttonText, Point textStartLocation, int arc, Color backgroudColor, ImageIcon icon, Point imageStartLocation){
@@ -57,5 +61,30 @@ public class GButton extends JButton {
     @Override
     protected void paintBorder(Graphics g) {
         // Do nothing to prevent painting the default border
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        backgroudColor = backgroudColor.darker();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        backgroudColor = backgroudColor.brighter();
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        backgroudColor = backgroudColor.brighter();
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        backgroudColor = backgroudColor.darker();
     }
 }

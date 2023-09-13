@@ -1,4 +1,8 @@
-package Components;
+package Containers;
+
+import UIComponents.GButton;
+import UIComponents.GPanel;
+import UIComponents.ServicePanel;
 
 import javax.swing.*;
 import java.awt.*;

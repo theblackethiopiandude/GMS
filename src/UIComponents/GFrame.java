@@ -1,4 +1,6 @@
-package Components;
+package UIComponents;
+
+import Containers.MainFrame;
 
 import javax.swing.*;
 
