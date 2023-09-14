@@ -3,20 +3,16 @@ package UIComponents;
 import javax.swing.*;
 import java.awt.*;
 
-public class CarPanel extends JPanel {
+public class ImagePanel extends JPanel {
     private final int width,height;
-    private final ImageIcon carImage = new ImageIcon("assets/images/carPanel.png");
+    private final ImageIcon image;
 
-    public CarPanel(){
-        this.width = 900;
-        this.height = 252;
+    public ImagePanel(ImageIcon image, Dimension size){
+        this.width = size.width;
+        this.height = size.height;
+        this.image = image;
     }
 
-   /* if Layout Manager used
-   public CarPanel(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }*/
 
     @Override
     public void paintComponent(Graphics graphics){
@@ -25,7 +21,7 @@ public class CarPanel extends JPanel {
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 
-        graphics2D.drawImage(carImage.getImage(),0,0, width, height,null);
+        graphics2D.drawImage(image.getImage(),0,0, width, height,null);
         //        super.paintComponent(graphics);
     }
 }

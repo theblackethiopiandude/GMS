@@ -4,35 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6320f3e7-10da-4e96-9725-c85e78c01797" name="Changes" comment="oil, add and back icon added">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_12_2_0_jre11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/jdbc/mssql-jdbc-12.2.0.jre11.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/CarSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/Connection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/IConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DatabaseComponents/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/GTabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/ModernScrollBarUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/ScrollBarCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/TableCellRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/TableHeaderRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/TableImageRenderer.java" afterDir="false" />
+    <list default="true" id="6320f3e7-10da-4e96-9725-c85e78c01797" name="Changes" comment="bug becomes Feature">
+      <change afterPath="$PROJECT_DIR$/assets/images/History.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/infoPanel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Containers/CarInfoFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Containers/HistoryFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GMS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/CarPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GTextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/MainFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServicePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/ServicePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServicesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/ServicesFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIComponents/CarPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIComponents/GButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIComponents/GFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIComponents/GTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GSearchField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694511443178</updated>
       <workItem from="1694511445807" duration="31971000" />
-      <workItem from="1694605373954" duration="15312000" />
+      <workItem from="1694605373954" duration="25235000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage Done with null Layout">
       <created>1694520664056</created>
@@ -140,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694539178919</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bug becomes Feature">
+      <created>1694635009143</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694635009143</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +166,7 @@
     <MESSAGE value="Homepage Done with null Layout" />
     <MESSAGE value="Services page Done and added to the main Frame with Home page" />
     <MESSAGE value="oil, add and back icon added" />
-    <option name="LAST_COMMIT_MESSAGE" value="oil, add and back icon added" />
+    <MESSAGE value="bug becomes Feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug becomes Feature" />
   </component>
 </project>

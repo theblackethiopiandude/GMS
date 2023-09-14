@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class GButton extends JButton implements MouseListener{
-    private final int cornerRadius;
+    private final int arc;
     private  Color backgroudColor;
     final private Icon icon;
     final private Point imageStartLocation;
@@ -16,7 +16,7 @@ public class GButton extends JButton implements MouseListener{
     public GButton(int arc, Color backgroudColor, ImageIcon icon, Point imageStartLocation){
         this.setOpaque(false);
         this.setFocusable(true);
-        this.cornerRadius = arc;
+        this.arc = arc;
         this.backgroudColor = backgroudColor;
         this.icon = icon;
         this.imageStartLocation = imageStartLocation;
@@ -31,6 +31,18 @@ public class GButton extends JButton implements MouseListener{
         this.hasText = true;
         this.setBorder(new EmptyBorder(textStartLocation.y , textStartLocation.x,10,10));
     }
+    public GButton(String buttonText, Point textStartLocation, int arc, Color backgroudColor, Font font){
+        this.buttonText = buttonText;
+        this.setOpaque(false);
+        this.setFocusable(true);
+        this.arc = arc;
+        this.backgroudColor = backgroudColor;
+        this.imageStartLocation = null;
+        this.icon = null;
+        this.hasText = true;
+        this.setFont(font);
+        this.setBorder(new EmptyBorder(textStartLocation.y , textStartLocation.x,10,10));
+    }
     @Override
     public void paintComponent(Graphics graphics){
         Graphics2D graphics2D = (Graphics2D) graphics;
@@ -38,10 +50,12 @@ public class GButton extends JButton implements MouseListener{
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 
-        graphics2D.setPaint(backgroudColor);
-        graphics2D.fillRoundRect(0,0, this.getWidth(), this.getHeight(), cornerRadius, cornerRadius);
 
-        graphics2D.drawImage(((ImageIcon) icon).getImage(), imageStartLocation.x, imageStartLocation.y, null);
+        graphics2D.setPaint(backgroudColor);
+        graphics2D.fillRoundRect(0,0, this.getWidth(), this.getHeight(), arc, arc);
+
+        if((icon != null) && (imageStartLocation != null))
+            graphics2D.drawImage(((ImageIcon) icon).getImage(), imageStartLocation.x, imageStartLocation.y, null);
 
         if (hasText){
             graphics2D.setColor(Color.WHITE);

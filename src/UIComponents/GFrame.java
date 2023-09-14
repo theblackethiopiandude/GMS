@@ -11,6 +11,7 @@ public class GFrame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("GMS");
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
         MainFrame mainFrame= new MainFrame(this);
 
         mainFrame.setBounds(0,0, 1366, 768);

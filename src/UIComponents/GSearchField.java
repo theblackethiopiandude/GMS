@@ -5,12 +5,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GTextField extends JTextField implements FocusListener{
+public class GSearchField extends JTextField implements FocusListener{
     final private Color backgroundColor = new Color(0x262626);
     final private Color textColor = new Color(0xA6A3A1);
     final private Icon searchIcon = new ImageIcon("assets/images/carSearch.png");
 
-    public GTextField() {
+    public GSearchField() {
         this.setOpaque(false);
         this.setBorder(new EmptyBorder(10, 158, 10, 10));
         this.setSelectionColor(new Color(0xA62631));
