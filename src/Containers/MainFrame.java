@@ -8,10 +8,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
+import static DatabaseComponents.Connection.getConnection;
+
 public class MainFrame extends GPanel implements ActionListener, KeyListener, MouseListener {
-    private final GButton updateCustomer, services, help;
+    private final GButton updateCustomer, services, help, addCustomer;
     private final GSearchField searchField;
     private final JFrame callerFrame;
 
@@ -47,7 +51,7 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
 
         ImagePanel imagePanel = new ImagePanel(new ImageIcon("assets/images/carPanel.png"), new Dimension(900, 252));
         JLabel startRegistration = new JLabel("Start Registration");
-        GButton addCustomer = new GButton(10, new Color(0xA62631), new ImageIcon("assets/images/addPerson.png"), new Point(66,9));
+        addCustomer = new GButton(10, new Color(0xA62631), new ImageIcon("assets/images/addPerson.png"), new Point(66,9));
 
 
         updateCustomer = new GButton("Update Customer\nProfile", new Point(13, 39), 10, new Color(0x262626), new ImageIcon("assets/images/updateCustomer.png"), new Point(181,41));
@@ -76,6 +80,35 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
         imagePanel.add(startRegistration);
         imagePanel.add(addCustomer);
 
+        addCustomer.addActionListener(this);
+        updateCustomer.addActionListener(this);
+
+        /*JTextField plateToDelete = new JTextField("");
+        plateToDelete.setSize(new Dimension(135, 32));
+        plateToDelete.setBounds(54, 650, 135, 32);
+        JButton deleteCarButton = new JButton("Delete");
+        deleteCarButton.setPreferredSize(new Dimension(81, 32));
+        deleteCarButton.setBounds(223, 650, 81, 32);
+        deleteCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!plateToDelete.getText().equals("")){
+                    try(PreparedStatement pst = getConnection().prepareStatement("DELETE FROM Cars WHERE PlateNo = ?")) {
+
+                        pst.setString(1, plateToDelete.getText());
+                        pst.executeUpdate();
+                        plateToDelete.setText("Car Deleted");
+
+                    } catch (SQLException ex) {
+                        System.out.println(ex.getMessage());
+                    }
+                }
+            }
+        });*/
+
+
+//        this.add(plateToDelete);
+//        this.add(deleteCarButton);
         this.add(searchField);
         this.add(tableScrollPane);
         this.add(imagePanel);
@@ -92,6 +125,10 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == services){
             callerFrame.add(new ServicesFrame(this));
+        } else if (event.getSource() == addCustomer) {
+            callerFrame.add(new AddCustomerFrame(this));
+        } else if (event.getSource() == updateCustomer) {
+            callerFrame.add(new UpdateCustomerFrame(callerFrame,this));
         }
     }
 
@@ -109,6 +146,13 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
     public void keyReleased(KeyEvent e) {
         if (e.getSource() == searchField){
             if (!searchField.getText().equals("")){
+                /*this.tableModel = new DefaultTableModel(new CarSearch().addToTable(), new Object[]{ "Customer Name", "Plate Number", "Phone Number", "Make", "Model" }) {
+                    @Override
+                    public boolean isCellEditable(int row, int column) {
+                        return false; // Make all cells uneditable
+                    }
+                };*/
+
                 for (JComponent jComponent : componentsToDisable) jComponent.setVisible(false);
                 tableScrollPane.setVisible(true);
                 tableModel = (DefaultTableModel) searchTable.getModel();
@@ -161,5 +205,8 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+    public void refresh(){
+//        tableModel
     }
 }

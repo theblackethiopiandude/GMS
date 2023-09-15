@@ -42,6 +42,7 @@ public class GButton extends JButton implements MouseListener{
         this.hasText = true;
         this.setFont(font);
         this.setBorder(new EmptyBorder(textStartLocation.y , textStartLocation.x,10,10));
+        this.addMouseListener(this);
     }
     @Override
     public void paintComponent(Graphics graphics){

@@ -8,7 +8,10 @@ import java.awt.event.*;
 public class GSearchField extends JTextField implements FocusListener{
     final private Color backgroundColor = new Color(0x262626);
     final private Color textColor = new Color(0xA6A3A1);
-    final private Icon searchIcon = new ImageIcon("assets/images/carSearch.png");
+    private Icon searchIcon;
+    private Point imageStartLocation;
+    private Dimension imageSize;
+    private String placeHolderText;
 
     public GSearchField() {
         this.setOpaque(false);
@@ -18,7 +21,6 @@ public class GSearchField extends JTextField implements FocusListener{
         this.setFont(new Font("Segoe UI", Font.PLAIN, 32));
         this.setEnabled(false);
         this.setCaretColor(Color.WHITE);
-
         this.addFocusListener(this);
         this.addMouseListener(new MouseAdapter() {
             @Override
@@ -28,7 +30,18 @@ public class GSearchField extends JTextField implements FocusListener{
                 repaint();
             }
         });
+        searchIcon = new ImageIcon("assets/images/carSearch.png");
+        this.imageStartLocation = new Point(31, 10);
+        this.imageSize = new Dimension(74, 40);
+        this.placeHolderText = "Search Plate Number";
 
+    }
+    public GSearchField(ImageIcon icon, Point imageStartLocation, Dimension imageSize, String placeHolderText){
+        this();
+        this.searchIcon = icon;
+        this.imageStartLocation = imageStartLocation;
+        this.imageSize = imageSize;
+        this.placeHolderText = placeHolderText;
     }
 
     @Override
@@ -42,12 +55,12 @@ public class GSearchField extends JTextField implements FocusListener{
         graphics2D.setColor(backgroundColor);
         graphics2D.fillRoundRect(0, 0, this.getWidth(), this.getHeight(), this.getHeight(), this.getHeight());
 
-        graphics2D.drawImage(((ImageIcon) searchIcon).getImage(), 31, 10, 74, 40, null);
+        graphics2D.drawImage(((ImageIcon) searchIcon).getImage(), imageStartLocation.x, imageStartLocation.y, imageSize.width, imageSize.height, null);
 
         if (this.getText().equals("") && !this.hasFocus()) {
 //            System.out.println("Gebchalew");
             graphics2D.setColor(textColor);
-            graphics2D.drawString("Search Plate Number", getInsets().left, graphics.getFontMetrics()
+            graphics2D.drawString(this.placeHolderText, getInsets().left, graphics.getFontMetrics()
                     .getMaxAscent() + getInsets().top);
         }
         super.paintComponent(graphics);

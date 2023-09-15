@@ -20,6 +20,8 @@ public class HistoryFrame extends GPanel {
         backButton.setBounds(271,26, 71, 43);
         addButton.setBounds(970, 26, 71, 43);
 
+
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

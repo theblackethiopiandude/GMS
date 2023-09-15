@@ -49,7 +49,16 @@ public class CarSearch extends Connection{
     }
 
     public Object[][] addToTable(){
-        Object [][] objects = new Object[25][5];
+        int rowSize = 25;
+        try (PreparedStatement pst = getConnection().prepareStatement("SELECT COUNT(PlateNo) AS [size] FROM CarSearch")){
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()) {
+                rowSize = rs.getInt("size");
+            }
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        Object [][] objects = new Object[rowSize][5];
         try (PreparedStatement pst = getConnection().prepareStatement("SELECT * FROM CarSearch")){
             ResultSet rs = pst.executeQuery();
             int i = 0;
