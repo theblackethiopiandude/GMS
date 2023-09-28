@@ -12,6 +12,7 @@ public class GFrame extends JFrame {
         this.setTitle("GMS");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon("assets/images/car-service.png").getImage());
         MainFrame mainFrame= new MainFrame(this);
 
         mainFrame.setBounds(0,0, 1366, 768);

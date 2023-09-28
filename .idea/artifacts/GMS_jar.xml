@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GMS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GMS_jar</output-path>
+    <root id="archive" name="GMS.jar">
+      <element id="module-output" name="GMS" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/assets/jdbc/sqlite-jdbc-3.43.0.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

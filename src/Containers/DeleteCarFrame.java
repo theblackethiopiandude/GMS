@@ -61,7 +61,7 @@ public class DeleteCarFrame extends GPanel implements MouseListener, ActionListe
         deleteWarning.setVisible(false);
 
         deleteDone =  new ImagePanel(new ImageIcon("assets/images/deleted.png"), new Dimension(575, 235));
-        deleteDone.setBounds(377, 208, 575, 235);
+        deleteDone.setBounds(450, 219, 575, 235);
         deleteDone.setVisible(false);
         deleteDone.add(ok);
 
@@ -125,7 +125,7 @@ public class DeleteCarFrame extends GPanel implements MouseListener, ActionListe
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == yesConfirm){
-            try (PreparedStatement pst = getConnection().prepareStatement("DELETE Cars WHERE PlateNo = ?")){
+            try (PreparedStatement pst = getConnection().prepareStatement("DELETE FROM Cars WHERE PlateNo = ?")){
                 pst.setString(1, plateNumber);
                 pst.executeUpdate();
                 deleteWarning.setVisible(false);
@@ -133,6 +133,11 @@ public class DeleteCarFrame extends GPanel implements MouseListener, ActionListe
             } catch (SQLException exception){
                 System.out.println(exception.getMessage());
             }
+            DefaultTableModel model = (DefaultTableModel) searchTable.getModel();
+            model.removeRow(searchTable.getSelectedRow());
+            searchTable.setModel(model);
+            deleteWarning.setVisible(false);
+            deleteDone.setVisible(true);
         }else if (e.getSource() == cancelConfirm) {
             deleteWarning.setVisible(false);
         }

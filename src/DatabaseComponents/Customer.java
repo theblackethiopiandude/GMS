@@ -49,7 +49,7 @@ public class Customer extends Connection implements IConnection{
 
     @Override
     public void insertIntoDatabase() {
-        try (PreparedStatement pst = getConnection().prepareStatement("insert into Customers values(?,?,?)")){
+        try (PreparedStatement pst = getConnection().prepareStatement("INSERT INTO Customers(Name, Address, PhoneNumber) VALUES (?,?,?)")){
             pst.setString(1, this.getName());
             pst.setString(2, this.getPhoneNumber());
             pst.setString(3, this.getAddress());
@@ -57,6 +57,21 @@ public class Customer extends Connection implements IConnection{
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
+    }
+    public Object[] getRow(int id){
+        Object [] object = new Object[3];
+        try (PreparedStatement pst = getConnection().prepareStatement("SELECT * FROM Customers WHERE ID = ?")){
+            pst.setInt(1, id);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()) {
+                object [0] = rs.getString("Name");
+                object [1] = rs.getString("PhoneNumber");
+                object [2] = rs.getString("Address");
+            }
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return object;
     }
     public Object[][] addToTable(){
         int rowSize = 25;

@@ -3,15 +3,18 @@ package DatabaseComponents;
 import java.sql.DriverManager;
 
 public abstract class Connection{
-    private static final String DB_URL ="jdbc:sqlserver://localhost;databaseName=GMS;encrypt=true;trustServerCertificate=true";
-    private static final String DB_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static final String DB_USERNAME = "user";
-    private static final String DB_PASSWORD = "user";
+    private static final String DB_URL ="jdbc:sqlite:assets/database/GMS.sqlite";
+
+//    jdbc:sqlserver://localhost;databaseName=GMS;encrypt=true;trustServerCertificate=true
+//    private static final String DB_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+//    private static final String DB_USERNAME = "user";
+//    private static final String DB_PASSWORD = "user";
     private static java.sql.Connection connection = null;
     static {
         try {
-            Class.forName(DB_DRIVER);
-            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+//            Class.forName(DB_DRIVER);
+//            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+            connection = DriverManager.getConnection(DB_URL);
             System.out.println("Connection Successful!");
         } catch (Exception e) {
             System.out.println(e.getMessage());

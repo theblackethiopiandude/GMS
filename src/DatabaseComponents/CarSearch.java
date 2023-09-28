@@ -48,8 +48,26 @@ public class CarSearch extends Connection{
         return model;
     }
 
+    public Object[] getRow(String plateNumber){
+        Object [] object = new Object[5];
+        try (PreparedStatement pst = getConnection().prepareStatement("SELECT * FROM CarSearch WHERE PlateNo = ?")){
+            pst.setString(1, plateNumber);
+            ResultSet rs = pst.executeQuery();
+            while(rs.next()) {
+                object [0] = rs.getString("Name");
+                object [1] = rs.getString("PlateNo");
+                object [2] = rs.getString("PhoneNumber");
+                object [3] = rs.getString("Make");
+                object [4] = rs.getString("Model");
+            }
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return object;
+    }
+
     public Object[][] addToTable(){
-        int rowSize = 25;
+        int rowSize = 0;
         try (PreparedStatement pst = getConnection().prepareStatement("SELECT COUNT(PlateNo) AS [size] FROM CarSearch")){
             ResultSet rs = pst.executeQuery();
             while(rs.next()) {

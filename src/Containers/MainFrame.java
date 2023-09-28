@@ -126,9 +126,9 @@ public class MainFrame extends GPanel implements ActionListener, KeyListener, Mo
         if (event.getSource() == services){
             callerFrame.add(new ServicesFrame(this));
         } else if (event.getSource() == addCustomer) {
-            callerFrame.add(new AddCustomerFrame(this));
+            callerFrame.add(new AddCustomerFrame(this, (DefaultTableModel) searchTable.getModel()));
         } else if (event.getSource() == updateCustomer) {
-            callerFrame.add(new UpdateCustomerFrame(callerFrame,this));
+            callerFrame.add(new UpdateCustomerFrame(callerFrame,this, (DefaultTableModel) searchTable.getModel()));
         }
     }
 

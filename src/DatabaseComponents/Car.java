@@ -62,9 +62,22 @@ public class Car extends Connection implements IConnection{
             System.out.println(e.getMessage());
         }
     }
+    public void insertIntoDatabase(String plateNumber, String make, String model, String vin, int customerID) {
+        try (PreparedStatement pst = getConnection().prepareStatement("INSERT INTO Cars(PlateNo, Make, Model, VIN, CustomerID) values(?,?,?,?,?)")){
+            pst.setString(1, plateNumber);
+            pst.setString(2, make);
+            pst.setString(3, model);
+            pst.setString(4, vin);
+            pst.setInt(5, customerID);
+            pst.executeUpdate();
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
     public Object[][] addToTable(int customerID){
-        int rowSize = 25;
-        try (PreparedStatement pst = getConnection().prepareStatement("SELECT COUNT(PlateNo) AS [size] FROM Cars")){
+        int rowSize = 0;
+        try (PreparedStatement pst = getConnection().prepareStatement("SELECT COUNT(PlateNo) AS [size] FROM Cars WHERE CustomerID = ?")){
+            pst.setInt(1, customerID);
             ResultSet rs = pst.executeQuery();
             while(rs.next()) {
                 rowSize = rs.getInt("size");

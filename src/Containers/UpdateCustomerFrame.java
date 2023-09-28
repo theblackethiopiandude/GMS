@@ -22,13 +22,17 @@ public class UpdateCustomerFrame extends GPanel implements MouseListener, KeyLis
     private final GTabel searchTable;
     private final JScrollPane tableScrollPane;
     private DefaultTableModel tableModel;
+    private final DefaultTableModel mainSearchCarModel;
+    private int row = -1;
 
-    public UpdateCustomerFrame(JFrame callerFrame, JPanel callerPanel) {
+    public UpdateCustomerFrame(JFrame callerFrame, JPanel callerPanel, DefaultTableModel mainSearchCarModel) {
         this.setLayout(null);
         this.setBounds(0, 0, 1366, 768);
         this.setPreferredSize(new Dimension(1366, 768));
         this.callerFrame = callerFrame;
         callerPanel.setVisible(false);
+
+        this.mainSearchCarModel = mainSearchCarModel;
 
         searchField = new GSearchField(new ImageIcon("assets/images/personSearch.png"), new Point(41, 12), new Dimension(44, 41), "Search Name");
         this.tableModel = new DefaultTableModel(new Customer().addToTable(), new Object[]{ "Customer Name", "Phone Number", "Address"}) {
@@ -91,10 +95,12 @@ public class UpdateCustomerFrame extends GPanel implements MouseListener, KeyLis
                 name = model.getValueAt(searchTable.getRowSorter().convertRowIndexToModel(searchTable.getSelectedRow()), getColumnIndexByName(searchTable, "Customer Name")).toString();
                 phoneNumber = model.getValueAt(searchTable.getRowSorter().convertRowIndexToModel(searchTable.getSelectedRow()), getColumnIndexByName(searchTable, "Phone Number")).toString();
                 address = model.getValueAt(searchTable.getRowSorter().convertRowIndexToModel(searchTable.getSelectedRow()), getColumnIndexByName(searchTable, "Address")).toString();
+                this.row = searchTable.getRowSorter().convertRowIndexToModel(searchTable.getSelectedRow());
             }else{
                 name = model.getValueAt(searchTable.getSelectedRow(), getColumnIndexByName(searchTable, "Customer Name")).toString();
                 phoneNumber = model.getValueAt(searchTable.getSelectedRow(), getColumnIndexByName(searchTable, "Phone Number")).toString();
                 address = model.getValueAt(searchTable.getSelectedRow(), getColumnIndexByName(searchTable, "Address")).toString();
+                this.row = searchTable.getSelectedRow();
             }
             int ID = -1;
             try (PreparedStatement pst = getConnection().prepareStatement("SELECT ID FROM Customers WHERE Name = ? AND PhoneNumber = ? AND Address = ?")){
@@ -108,7 +114,7 @@ public class UpdateCustomerFrame extends GPanel implements MouseListener, KeyLis
             } catch (SQLException exception){
                 System.out.println(exception.getMessage());
             }
-            callerFrame.add(new customerInfoFrame(callerFrame,  this, ID));
+            callerFrame.add(new customerInfoFrame(callerFrame,  this, ID, this.mainSearchCarModel, (DefaultTableModel) this.searchTable.getModel(), this.row));
         }
     }
 

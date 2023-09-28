@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="GMS:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6320f3e7-10da-4e96-9725-c85e78c01797" name="Changes" comment="Debugging LoginPanel">
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Diamonds-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/Diamonds-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/Car Search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/carInfoPanel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/confirmRegistration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customerInfoPanel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/deleteWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/deleted.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/done.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/emptyWarning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/loginBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/newCarBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/personLarge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/personSearch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/saveCar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/undo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/AddCustomerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/DeleteCarFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/LoginFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/UpdateCustomerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Containers/customerInfoFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/ColorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/GTextField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UIComponents/LoginPanel.java" afterDir="false" />
+    <list default="true" id="6320f3e7-10da-4e96-9725-c85e78c01797" name="Changes" comment="LoginPanel Partially done">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/GMS_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_43_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/database/GMS.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/database/GMS.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/addService.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/car-service.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/historyEntry.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/historyEntry00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/jdbc/sqlite-jdbc-3.43.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UIComponents/GTextArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/AddCustomerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/AddCustomerFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/CarInfoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/CarInfoFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/DeleteCarFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/DeleteCarFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/HistoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/HistoryFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/LoginFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/ServicesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/ServicesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/UpdateCustomerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/UpdateCustomerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/customerInfoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/customerInfoFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/CarSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/CarSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIComponents/GButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIComponents/GSearchField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GSearchField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIComponents/ImagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/ImagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseComponents/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseComponents/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UIComponents/GFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIComponents/GFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,26 +67,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eyosiyas/IdeaProjects/GMS/assets/jdbc/mssql-jdbc-12.2.0.jre11.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "last_opened_file_path": "C:/Users/Eyosiyas/IdeaProjects/GMS/assets/jdbc/sqlite-jdbc-3.43.0.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Containers" />
@@ -113,7 +116,15 @@
       <updated>1694511443178</updated>
       <workItem from="1694511445807" duration="31971000" />
       <workItem from="1694605373954" duration="29145000" />
-      <workItem from="1694677085677" duration="51793000" />
+      <workItem from="1694677085677" duration="56609000" />
+      <workItem from="1694768185957" duration="107000" />
+      <workItem from="1694892093090" duration="12556000" />
+      <workItem from="1695037639362" duration="1453000" />
+      <workItem from="1695117207549" duration="471000" />
+      <workItem from="1695744982675" duration="373000" />
+      <workItem from="1695823157842" duration="12528000" />
+      <workItem from="1695839154971" duration="22385000" />
+      <workItem from="1695893716841" duration="7784000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage Done with null Layout">
       <created>1694520664056</created>
@@ -164,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694663543810</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="LoginPanel Partially done">
+      <created>1694762169466</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694762169466</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +222,7 @@
     <MESSAGE value="bug becomes Feature" />
     <MESSAGE value="History and CarInformation Frame added" />
     <MESSAGE value="Debugging LoginPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging LoginPanel" />
+    <MESSAGE value="LoginPanel Partially done" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginPanel Partially done" />
   </component>
 </project>

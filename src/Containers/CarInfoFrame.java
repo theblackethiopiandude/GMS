@@ -17,6 +17,7 @@ import static DatabaseComponents.Connection.getConnection;
 public class CarInfoFrame extends GPanel implements ActionListener{
     private final GButton historyButton;
     private final JFrame callerFrame;
+    private  JLabel carPlateHolder;
     public CarInfoFrame(JFrame callerFrame, JPanel callerPanel, String plateNumber) {
         this.setLayout(null);
         this.setBounds(0,0, 1366, 768);
@@ -51,7 +52,7 @@ public class CarInfoFrame extends GPanel implements ActionListener{
         JLabel customerPhoneHolder = new JLabel();
         JLabel customerAddressHolder = new JLabel();
 
-        JLabel carPlateHolder = new JLabel();
+        carPlateHolder = new JLabel();
         JLabel carMakeHolder = new JLabel();
         JLabel carModelHolder = new JLabel();
         JLabel carVinHolder = new JLabel();
@@ -151,7 +152,7 @@ public class CarInfoFrame extends GPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == historyButton){
             this.setVisible(false);
-            callerFrame.add(new HistoryFrame(this));
+            callerFrame.add(new HistoryFrame(carPlateHolder.getText(),this));
         }
     }
 }

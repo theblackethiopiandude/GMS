@@ -1,11 +1,13 @@
 package Containers;
 
+import DatabaseComponents.CarSearch;
 import UIComponents.GButton;
 import UIComponents.GPanel;
 import UIComponents.GTextField;
 import UIComponents.ImagePanel;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +20,7 @@ import static DatabaseComponents.Connection.getConnection;
 public class AddCustomerFrame extends GPanel implements ActionListener{
     private final JTextField [] textFields;
     private final ImagePanel confirmPanel;
-    private final GButton saveButton, cancelButton, backButton, yesButtonOnConfirm, cancelButtonOnConfirm;
+    private final GButton saveButton, clearButton, backButton, yesButtonOnConfirm, cancelButtonOnConfirm;
     private JLabel customerNameOnConfirm = new JLabel();
     private JLabel customerPhoneOnConfirm = new JLabel();
     private JLabel customerAddressOnConfirm = new JLabel();
@@ -29,12 +31,14 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
     private JLabel carVinOnConfirm = new JLabel();
     private JLabel[] labels = new JLabel[]{customerNameOnConfirm, customerPhoneOnConfirm, customerAddressOnConfirm, carPlateOnConfirm, carMakeOnConfirm, carModelOnConfirm, carVinOnConfirm};
     private final ImagePanel emptyWarning;
-    public AddCustomerFrame(JPanel callerPanel) {
+    private final DefaultTableModel mainSearchCarModel;
+    public AddCustomerFrame(JPanel callerPanel, DefaultTableModel mainSearchCarModel) {
         callerPanel.setVisible(false);
         this.setLayout(null);
         this.setBounds(0,0, 1366, 768);
         this.setPreferredSize(new Dimension(1366, 768));
 
+        this.mainSearchCarModel = mainSearchCarModel;
 
         backButton = new GButton(29, new Color(0x262626), new ImageIcon("assets/images/backArrow.png"), new Point(21, 15));
 
@@ -74,12 +78,13 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
         GTextField carModelField = new GTextField();
         GTextField carVinField = new GTextField();
 
-        saveButton = new GButton("Save", new Point(50, 15), 51, new Color(0x262626), new Font("Arial",Font.BOLD, 25));
-        cancelButton = new GButton("Cancel", new Point(40, 15), 51, new Color(0x262626), new Font("Arial",Font.BOLD, 25));
+        saveButton = new GButton("Save", new Point(54, 15), 51, new Color(0x262626), new Font("Arial",Font.BOLD, 25));
+        clearButton = new GButton("Clear", new Point(51, 15), 51, new Color(0x262626), new Font("Arial",Font.BOLD, 25));
         yesButtonOnConfirm = new GButton("Yes", new Point(50, 15), 22, new Color(0xA62631), new Font("Arial",Font.BOLD, 15));
         cancelButtonOnConfirm = new GButton("Cancel", new Point(53, 14), 22, new Color(0xA62631), new Font("Arial",Font.BOLD, 15));
 
 
+        clearButton.addActionListener(this);
         saveButton.addActionListener(this);
 
         JLabel []PanelLabels = {customerName, customerPhone, customerAddress, carPlate, carMake, carModel, carVin};
@@ -107,7 +112,7 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
 
 
         backButton.setBounds(271,26, 71, 43);
-        cancelButton.setBounds(505,663,161,61);
+        clearButton.setBounds(505,663,161,61);
         saveButton.setBounds(682,663,161,61);
 
         yesButtonOnConfirm.setBounds(275, 387, 151, 44);
@@ -153,7 +158,7 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
         this.add(emptyWarning);
         this.add(confirmPanel);
         this.add(backButton);
-        this.add(cancelButton);
+        this.add(clearButton);
         this.add(saveButton);
         this.add(customerInfo);
         this.add(carInfo);
@@ -166,7 +171,11 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == saveButton){
+        if (e.getSource() == clearButton){
+            for (JTextField textField : textFields) {
+                textField.setText("");
+            }
+        }else if (e.getSource() == saveButton){
             boolean empty = false;
             for (JTextField textField : textFields) {
                 if (textField.getText().equals(""))
@@ -207,7 +216,7 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
                 confirmPanel.add(carVinOnConfirm);
 
                 backButton.setVisible(false);
-                cancelButton.setVisible(false);
+                clearButton.setVisible(false);
                 saveButton.setVisible(false);
                 confirmPanel.setVisible(true);
             }
@@ -252,8 +261,13 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
                 System.out.println("Car Added");
 
                 confirmPanel.setVisible(false);
-                for (JTextField textField : textFields) {
+                backButton.setVisible(true);
+                clearButton.setVisible(true);
+                saveButton.setVisible(true);
 
+                mainSearchCarModel.addRow(new CarSearch().getRow(carPlateOnConfirm.getText()));
+                for (JTextField textField : textFields) {
+                    textField.setEditable(true);
                     textField.setText("");
                 }
 
@@ -265,7 +279,7 @@ public class AddCustomerFrame extends GPanel implements ActionListener{
                 textField.setEditable(true);
             }
             backButton.setVisible(true);
-            cancelButton.setVisible(true);
+            clearButton.setVisible(true);
             saveButton.setVisible(true);
             confirmPanel.setVisible(false);
         }
